@@ -788,37 +788,27 @@ class Program extends MythBase {
 
     public function getAspect() {
         global $db;
-        $aspect = $db->query_col('SELECT recordedmarkup.type
+        $x = $db->query_col('SELECT recordedmarkup.data
                                     FROM recordedmarkup
                                    WHERE recordedmarkup.chanid    = ?
                                      AND recordedmarkup.starttime = FROM_UNIXTIME(?)
-                                     AND recordedmarkup.type      IN (10, 11, 12, 13, 14)
- 	                            GROUP BY recordedmarkup.type
-                                ORDER BY SUM((SELECT IFNULL(rm.mark, recordedmarkup.mark)
- 	                                            FROM recordedmarkup AS rm
-                                               WHERE rm.chanid = recordedmarkup.chanid
- 	                                             AND rm.starttime = recordedmarkup.starttime
-                                                 AND rm.type IN (10, 11, 12, 13, 14)
-                                                 AND rm.mark > recordedmarkup.mark
-                                            ORDER BY rm.mark ASC LIMIT 1)- recordedmarkup.mark) DESC
-                                   LIMIT 1',
+                                     AND recordedmarkup.type      = 30
+				     AND recordedmarkup.mark      < 10',
                                    $this->chanid,
                                    $this->recstartts
                                    );
-        switch($aspect) {
-            case 10:
-                return 1;
-            case 11:
-                return 4/3;
-            case 12:
-                return 16/9;
-            case 13:
-                return 2.21/1;
-            case 14:
-                return 4/3;
-            default:
-                return 4/3;
-        }
+        $y = $db->query_col('SELECT recordedmarkup.data
+                                    FROM recordedmarkup
+                                   WHERE recordedmarkup.chanid    = ?
+                                     AND recordedmarkup.starttime = FROM_UNIXTIME(?)
+                                     AND recordedmarkup.type      = 31
+				     AND recordedmarkup.mark      < 10',
+                                   $this->chanid,
+                                   $this->recstartts
+                                   );
+        if ($x && $y >= 720)
+            return $x/$y;
+        return 4/3;
     }
 
 }

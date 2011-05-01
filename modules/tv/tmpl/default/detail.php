@@ -20,14 +20,14 @@
 // Custom headers
     $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_schedule.css">';
     $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_detail.css">';
-    $headers[] = '<script type="text/javascript" src="'.root_url.'js/flowplayer-3.1.1.min.js"></script>';
+    $headers[] = '<script type="text/javascript" src="'.root_url.'js/flowplayer-3.2.4.min.js"></script>';
 
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
 
     if ($program && $program->filename) {
         $flv_w = setting('WebFLV_w');
-        $flv_h = intVal($flv_w / $program->getAspect()) + 25;  // +25px for the playback controls
+        $flv_h = intVal($flv_w / $program->getAspect());
     }
 
 /*
@@ -559,7 +559,7 @@
 
             <div class="x-pixmap">
 <?php   if (setting('WebFLV_on')) { ?>
-<?php       if (file_exists('modules/tv/flowplayer-3.1.1.swf')) { ?>
+<?php       if (file_exists('modules/tv/flowplayer-3.2.5.swf')) { ?>
 
 
           <!-- this A tag is where your Flowplayer will be placed. it can be anywhere -->
@@ -568,32 +568,70 @@
                 id="player">
             </a>
 
-            <!-- this will install flowplayer inside previous A- tag. -->
+            <!-- this will install flowplayer inside previous A- tag. 
             <script>
-                flowplayer(
-                    "player",
-                    "<?php echo root_url ?>tv/flowplayer-3.1.1.swf", {
+                flowplayer("player", "http://releases.flowplayer.org/swf/flowplayer-3.2.5.swf", {
+                    // change the default controlbar to transparent
+                    plugins: {
+                        controls: {
+                            url: 'flowplayer.controls-3.2.3.swf',
+
+                            backgroundColor: "transparent",
+                            backgroundGradient: "none",
+                            sliderColor: '#FFFFFF',
+			    sliderBorder: '1.5px solid rgba(160,160,160,0.7)',
+			    volumeSliderColor: '#FFFFFF',
+			    volumeBorder: '1.5px solid rgba(160,160,160,0.7)',
+
+			    timeColor: '#ffffff',
+			    durationColor: '#535353',
+
+			    tooltipColor: 'rgba(255, 255, 255, 0.7)',
+			    tooltipTextColor: '#000000'
+		        }
+	            },
                     playlist: [
                         // this first PNG clip works as a splash image
                         {
                             url: '<?php echo $program->thumb_url($flv_w,0) ?>',
-                            scaling: 'orig'
-                            },
+                            scaling: 'fit'
+                        },
                         // Then we have the video
                         {
                             url: "<?php echo video_url($program, 'flv'); ?>",
-                            duration: <?php echo $program->length ?>,
+                            // duration: <?php echo $program->length ?>,
+                            autoPlay: false,
+                            scaling: 'fit',
+                            // Would be nice to auto-buffer, but we don't want to
+                            // waste bandwidth and CPU on the remote machine.
+                            autoBuffering: true
+                        }
+                    ]
+                });
+            </script> -->
+            <script>
+                flowplayer("player", "<?php echo root_url ?>tv/flowplayer-3.1.5.swf", {
+                    playlist: [
+                        // this first PNG clip works as a splash image
+                        {
+                            url: '<?php echo $program->thumb_url($flv_w,0) ?>',
+                            scaling: 'fit'
+                        },
+                        // Then we have the video
+                        {
+                            url: "<?php echo video_url($program, 'flv'); ?>",
+                            // duration: <?php echo $program->length ?>,
                             autoPlay: false,
                             scaling: 'fit',
                             // Would be nice to auto-buffer, but we don't want to
                             // waste bandwidth and CPU on the remote machine.
                             autoBuffering: false
-                            }
-                        ]}
-                    );
-            </script>
+                        }
+                    ]
+                });
+            </script> 
 <?php       } elseif (file_exists('modules/tv/MFPlayer.swf')) { ?>
-                    <script langfuage="JavaScript" type="text/javascript">
+                    <script language="JavaScript" type="text/javascript">
                     <!--
                     // Version check for the Flash Player that has the ability to start Player Product Install (6.0r65)
                     var hasProductInstall = DetectFlashVer(6, 0, 65);

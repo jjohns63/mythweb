@@ -55,12 +55,12 @@
     my ($abitrate) = $sh->fetchrow_array;
     $sh->finish();
 # auto-detect height based on aspect ratio
-    $sh = $dbh->prepare('SELECT data FROM recordedmarkup WHERE chanid=? AND starttime=FROM_UNIXTIME(?) AND (type=30 OR type=31) AND mark=0 AND data IS NOT NULL ORDER BY type');
+    $sh = $dbh->prepare('SELECT data FROM recordedmarkup WHERE chanid=? AND starttime=FROM_UNIXTIME(?) AND (type=30 OR type=31) AND mark<10 AND data IS NOT NULL ORDER BY type');
     $sh->execute($chanid,$starttime);
     $x = $sh->fetchrow_array;           # type = 30
     $y = $sh->fetchrow_array if ($x);   # type = 31
     $width = round_even($width);
-    if ($x && $y) {
+    if ($x && $y >= 720) {
         $height = round_even($width * ($y/$x));
     } else {
         $height = round_even($width * 3/4);
@@ -77,7 +77,7 @@
                         .' -i '.shell_escape($filename)
                         .' -s '.shell_escape("${width}x${height}")
                         .' -g 30'
-                        .' -r 24'
+                        .' -r 30'
                         .' -f flv'
                         .' -deinterlace'
                         .' -ac 2'
@@ -99,7 +99,7 @@
     if ($dur && $dur =~ /\d*:\d*:.*/) {
         @times = split(':',$dur);
         $lengthSec = $times[0]*3600+$times[1]*60+$times[2];
-        $size = int($lengthSec*($vbitrate*1000+$abitrate*1000)/8);
+        $size = 1.05*int($lengthSec*($vbitrate*1024+$abitrate*1024)/8);
         print header(-type => 'video/x-flv','Content-Length' => $size);
     } else {
         print header(-type => 'video/x-flv');

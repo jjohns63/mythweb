@@ -9,7 +9,98 @@
 #
 
     use POSIX qw(ceil floor);
+    use HTTP::Date;
+    $| = 1;
 
+    $flv_filename = $filename;
+    $flv_basename = $basename;
+
+    $flv_filename =~ s/mpg$/flv/g;
+    $flv_basename =~ s/mpg$/flv/g;
+    $flv_filename =~ s/nuv$/flv/g;
+    $flv_basename =~ s/nuv$/flv/g;
+
+
+# File size
+    my $size = -s $flv_filename;
+
+# Zero bytes?
+if ($size > 1) {
+# File type
+    my $type   = 'video/x-flv';
+    my $suffix = '.flv';
+
+# Open the file for reading
+    unless (sysopen DATA, $flv_filename, O_RDONLY) {
+        print header(),
+              "Can't read $flv_basename:  $!";
+        exit;
+    }
+
+# Binmode, in case someone is running this from Windows.
+    binmode DATA;
+
+    my $start      = 0;
+    my $end        = $size;
+    my $total_size = $size;
+    my $read_size  = 1024;
+    my $mtime      = (stat($flv_filename))[9];
+
+# Handle cache hits/misses
+    if ( $ENV{'HTTP_IF_MODIFIED_SINCE'}) {
+        my $check_time = str2time($ENV{'HTTP_IF_MODIFIED_SINCE'});
+        if ($mtime <= $check_time) {
+            print header(-Content_type           => $type,
+                         -status                 => "304 Not Modified"
+                        );
+            exit;
+        }
+    }
+
+# Requested a range?
+    if ($ENV{'HTTP_RANGE'}) {
+    # Figure out the size of the requested chunk
+        ($start, $end) = $ENV{'HTTP_RANGE'} =~ /bytes\W+(\d*)-(\d*)\W*$/;
+        if ($end < 1 || $end > $size) {
+            $end = $size;
+        }
+        $size = $end - $start+1;
+        if ($read_size > $size) {
+            $read_size = $size;
+        }
+        print header(-status                 => "206 Partial Content",
+                     -type                   => $type,
+                     -Content_length         => $size,
+                     -Accept_Ranges          => 'bytes',
+                     -Content_Range          => "bytes $start-$end/$total_size",
+                     -Last_Modified          => time2str($mtime)
+                 );
+    }
+    else {
+        print header(-type                  => $type,
+                    -Content_length         => $size,
+                    -Accept_Ranges          => 'bytes',
+                    -Last_Modified          => time2str($mtime)
+                 );
+    }
+
+# Seek to the requested position
+    sysseek DATA, $start, 0;
+
+# Print the content to the browser
+    my $buffer;
+    while (sysread DATA, $buffer, $read_size ) {
+        print $buffer;
+        $size -= $read_size;
+        if ($size == 0) {
+            last;
+        }
+        if ($size < $read_size) {
+            $read_size = $size;
+        }
+    }
+    close DATA;
+} else {
 # round to the nearest even integer
     sub round_even {
         my ($in) = @_;
@@ -48,7 +139,7 @@
 # Load some conversion settings from the database
     $sh = $dbh->prepare('SELECT data FROM settings WHERE value=? AND hostname IS NULL');
     $sh->execute('WebFLV_w');
-    my ($width)    = $sh->fetchrow_array;
+    my ($height)    = $sh->fetchrow_array;
     $sh->execute('WebFLV_vb');
     my ($vbitrate) = $sh->fetchrow_array;
     $sh->execute('WebFLV_ab');
@@ -59,11 +150,11 @@
     $sh->execute($chanid,$starttime);
     $x = $sh->fetchrow_array;           # type = 30
     $y = $sh->fetchrow_array if ($x);   # type = 31
-    $width = round_even($width);
+    $height = round_even($height);
     if ($x && $y >= 720) {
-        $height = round_even($width * ($y/$x));
+        $width = round_even($height * ($x/$y));
     } else {
-        $height = round_even($width * 3/4);
+        $width = round_even($height * 4/3);
     }
     $sh->finish();
 
@@ -76,14 +167,20 @@
                         .' -y'
                         .' -i '.shell_escape($filename)
                         .' -s '.shell_escape("${width}x${height}")
-                        .' -g 30'
-                        .' -r 30'
-                        .' -f flv'
-                        .' -deinterlace'
-                        .' -ac 2'
-                        .' -ar 11025'
-                        .' -ab '.shell_escape("${abitrate}k")
+			.' -vcodec libx264'
                         .' -b '.shell_escape("${vbitrate}k")
+			.' -preset fast'
+			.' -tune animation'
+			.' -profile baseline'
+			.' -level 3.0'
+			.' -deinterlace'
+			.' -threads 0'
+			.' -f flv'
+			.' -acodec libfaac'
+                        .' -ac 2'
+			.' -aq 100'
+                        .' -ar 44100'
+                        .' -ab '.shell_escape("${abitrate}k")
                         .' /dev/stdout 2>/dev/null |';
 
 # Print the movie
@@ -116,5 +213,5 @@
         }
     }
     close DATA;
-
-    1;
+}
+1;

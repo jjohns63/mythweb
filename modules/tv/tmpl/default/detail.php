@@ -20,14 +20,14 @@
 // Custom headers
     $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_schedule.css">';
     $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_detail.css">';
-    $headers[] = '<script type="text/javascript" src="'.root_url.'js/flowplayer-3.2.4.min.js"></script>';
+    $headers[] = '<script type="text/javascript" src="'.root_url.'js/flowplayer-3.2.6.min.js"></script>';
 
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
 
     if ($program && $program->filename) {
-        $flv_w = setting('WebFLV_w');
-        $flv_h = intVal($flv_w / $program->getAspect());
+        $flv_h = setting('WebFLV_w');
+        $flv_w = intVal($flv_h * $program->getAspect());
     }
 
 /*
@@ -559,8 +559,7 @@
 
             <div class="x-pixmap">
 <?php   if (setting('WebFLV_on')) { ?>
-<?php       if (file_exists('modules/tv/flowplayer-3.2.5.swf')) { ?>
-
+<?php       if (file_exists('modules/tv/flowplayer-3.2.7.swf')) { ?>
 
           <!-- this A tag is where your Flowplayer will be placed. it can be anywhere -->
             <a href=""
@@ -568,23 +567,26 @@
                 id="player">
             </a>
 
-            <!-- this will install flowplayer inside previous A- tag. 
+            <!-- this will install flowplayer inside previous A- tag. -->
             <script>
-                flowplayer("player", "http://releases.flowplayer.org/swf/flowplayer-3.2.5.swf", {
+                flowplayer("player", "http://releases.flowplayer.org/swf/flowplayer-3.2.7.swf", {
                     // change the default controlbar to transparent
                     plugins: {
                         controls: {
-                            url: 'flowplayer.controls-3.2.3.swf',
+                            url: 'flowplayer.controls-3.2.5.swf',
 
                             backgroundColor: "transparent",
                             backgroundGradient: "none",
-                            sliderColor: '#FFFFFF',
+                            sliderColor: '#000000',
 			    sliderBorder: '1.5px solid rgba(160,160,160,0.7)',
-			    volumeSliderColor: '#FFFFFF',
+			    volumeSliderColor: '#A3A3A3',
 			    volumeBorder: '1.5px solid rgba(160,160,160,0.7)',
 
-			    timeColor: '#ffffff',
-			    durationColor: '#535353',
+                            volumeColor: '#FFFFFF',
+                            progressColor: '#FFFFFF',
+                            bufferColor: '#A3A3A3',
+			    timeColor: '#FFFFFF',
+			    durationColor: '#A3A3A3',
 
 			    tooltipColor: 'rgba(255, 255, 255, 0.7)',
 			    tooltipTextColor: '#000000'
@@ -604,11 +606,16 @@
                             scaling: 'fit',
                             // Would be nice to auto-buffer, but we don't want to
                             // waste bandwidth and CPU on the remote machine.
-                            autoBuffering: true
+                            autoBuffering: false
                         }
-                    ]
+                    ],
+                    canvas: {
+                       backgroundColor: '#000000',
+                       backgroundGradient: 'none'
+                    }
                 });
-            </script> -->
+            </script>
+            <!--
             <script>
                 flowplayer("player", "<?php echo root_url ?>tv/flowplayer-3.1.5.swf", {
                     playlist: [
@@ -629,7 +636,7 @@
                         }
                     ]
                 });
-            </script> 
+            </script> -->
 <?php       } elseif (file_exists('modules/tv/MFPlayer.swf')) { ?>
                     <script language="JavaScript" type="text/javascript">
                     <!--

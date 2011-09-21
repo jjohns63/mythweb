@@ -61,8 +61,7 @@
     %s sånger
 "%s Songs (%s)"
     %s sånger (%s)
-"(height is calculated automatically from the recording aspect ratio)"
-    (höjd beräknas automatiskt från inspelningens bildförhållande)
+"(width is calculated automatically from the recording aspect ratio)"
 "1 - Lowest"
     1 - Lägst
 "18 Hour Forecast"
@@ -75,8 +74,6 @@
     Avbryter
 "Action"
     Handling
-"Actions"
-    Handlingar
 "Activate"
     Aktivera
 "Active Screens"
@@ -172,8 +169,6 @@
     Är du säker på att du vill ta bort följande inspelning?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
     Är du säker på att du vill TA BORT DENNA SPARADE SPELLISTA?
-"Are you sure you want to delete this show?"
-    Är du säker på du vill radera denhär showen?
 "Artist Listing"
     Artistlistning
 "Artists"
@@ -258,8 +253,6 @@
     Caps lock
 "Cast"
     Rollbesättning
-"Cast Information"
-    Rollbesättning information
 "category"
     kategori
 "Category"
@@ -388,8 +381,6 @@
     Radera + Återinspela
 "Delete and allow rerecord: $1"
     Radera och tillåt återinspelning: $1
-"Delete and rerecord"
-    Radera och återinspela
 "Delete and rerecord $1"
     Radera och återinspela $1
 "Delete Forever"
@@ -499,12 +490,8 @@
     Exkludera upprepade avsnitt
 "Exec. Producer"
     Producent
-"Executive Producer"
-    Verkställande Producer
 "Extended Check"
     Utbredd kontroll
-"Extra Information"
-    Extra information
 "Faster"
     Fortare
 "ffmpeg with MP3 support not detected"
@@ -539,8 +526,7 @@
     Första visning av alla avsnitt
 "Flag Commercials"
     Flagga reklam
-"FLV Width"
-    FLV-bredd
+"FLV Height"
 "For daily recordings, 5 weekdays if a weekday, or 7 days per week if a weekend day."
     För dagliga inspelningar, 5 veckodagar om en vardag, eller 7 dagar per vecka om en lördag/söndag.
 "For more information on the Power Search please go to:"
@@ -718,8 +704,6 @@
     Längd (min)
 "Length in minutes"
     Längd i minuter
-"Links"
-    Länkar
 "Listing &quot;Jump to&quot;"
     TV-tablå &quot;Gå till&quot;
 "Listing Time Key"
@@ -1054,12 +1038,8 @@
     Programkategorier
 "Program Detail"
     Programdetalj
-"Program Flags"
-    Programflaggningar
 "Program ID"
     Program-ID
-"Program Information"
-    Program Information
 "Program Listing"
     Programlista
 "Program Type"
@@ -1108,8 +1088,6 @@
     Inspelningsdetaljer
 "Recording Group"
     Inspelningsgrupp
-"Recording Groups"
-    Inspelningsgrupper
 "Recording Options"
     Inspelningsinställningar
 "Recording Options Help"
@@ -1122,8 +1100,6 @@
     Inspelningsscheman
 "Recording Statistics"
     Inspelningsstatistik
-"Recording Titles"
-    Inspelningstitlar
 "recpriority"
     inspelningsprioritet
 "recstatus: cancelled"
@@ -1306,8 +1282,6 @@
 "Searches will be performed against the title of all TV shows"
 "Season"
     Säsong
-"Series ID"
-    Serie ID
 "Server Statistics"
     Serverstatistik
 "Set Host"
@@ -1514,8 +1488,6 @@
     TV
 "TV functions, including recorded programs."
     Tv-funktioner, inkl. inspelade program.
-"TV Submenu"
-    Tv Textningmeny
 "TV.com"
     TV.com
 "type"
@@ -1571,7 +1543,7 @@
 "Video: Error: Missing ID"
     Fel: ID:t skickades inte till IMDB-skriptet.
 "Video: IMDB: No Matches"
-    Inga träffar för denna titel. Använd en användardefinierad sökning för att ange ett IMDB-nummer eller använd en annan title för att söka igen. 
+    Inga träffar för denna titel. Använd en användardefinierad sökning för att ange ett IMDB-nummer eller använd en annan title för att söka igen.
 "Video: IMDB: Window Title"
     IMDB-träffar
 "Video: Warning: Artwork"
@@ -1579,7 +1551,7 @@
 "Video: Warning: Artwork: Download"
     Nedladdning av bilder från TMDB misslyckades.
 "Video: Warning: fopen"
-    Varning: Din php.ini-fil har allow_url_fopen satt till Off. För att ladda hem bilder krävs att den är satt till On. Bilder kommer inte att uppdateras. 
+    Varning: Din php.ini-fil har allow_url_fopen satt till Off. För att ladda hem bilder krävs att den är satt till On. Bilder kommer inte att uppdateras.
 "VideoAggressivePC"
     VideoaggresivPC
 "VideoArtworkDir"
@@ -1629,10 +1601,6 @@
     synlig
 "Visit $1"
     Besök $1
-"Watch on frontend"
-    Titta på frontend
-"Watch on iPod/iPhone"
-    Titta på iPod/iPhone
 "Watched"
     Har setts
 "Weather"
@@ -1660,7 +1628,7 @@
 "welcome: status"
     Visa status för ditt MythTV-system.
 "welcome: tv"
-    Se vad som visas på TV, schemalägg inspelningar och hantera redan gjorda inspelningar. 
+    Se vad som visas på TV, schemalägg inspelningar och hantera redan gjorda inspelningar.
 "welcome: video"
     Bläddra i videobiblioteket
 "welcome: weather"
@@ -1669,8 +1637,6 @@
     Vad visas mer vid denna tid?
 "Widescreen"
     Bredbild
-"Width"
-    Bredd
 "Will Record"
     Kommer att spelas in
 "Wind"

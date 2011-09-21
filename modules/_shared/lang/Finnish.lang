@@ -59,8 +59,7 @@
     %s kappaletta
 "%s Songs (%s)"
     %s kappaletta (%s)
-"(height is calculated automatically from the recording aspect ratio)"
-    (korkeus lasketaan automaattisesti tallenteen kuvasuhteella)
+"(width is calculated automatically from the recording aspect ratio)"
 "1 - Lowest"
     1 - Alin
 "18 Hour Forecast"
@@ -73,8 +72,6 @@
     Keskeytetään
 "Action"
     Toiminto
-"Actions"
-    Toiminnot
 "Activate"
     Aktivoi
 "Active Screens"
@@ -171,8 +168,6 @@
     Poistetaanko seuraavat ohjelmat?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
     Oletko varma, että haluat POISTAA TÄMÄN TALLENNETUN SOITTOLISTAN?
-"Are you sure you want to delete this show?"
-    Oletko varma että haluat poistaa tämän ohjelman?
 "Artist Listing"
     Artistiluettelo
 "Artists"
@@ -257,8 +252,6 @@
     Caps Lock
 "Cast"
     Esiintyjät
-"Cast Information"
-    Tietoja esiintyjistä
 "category"
     Kategoria
 "Category"
@@ -387,8 +380,6 @@
     Poisto ja uudelleentallennus
 "Delete and allow rerecord: $1"
     Poista ja salli uudelleen tallennus: $1
-"Delete and rerecord"
-    Poista ja tallenna uudelleen
 "Delete and rerecord $1"
     Poista ja tallenna uudelleen $1
 "Delete Forever"
@@ -496,12 +487,8 @@
     Sulje toistetut jaksot ulos
 "Exec. Producer"
     Tuottaja
-"Executive Producer"
-    Päätuottaja
 "Extended Check"
     Pidennetty tarkistus
-"Extra Information"
-    Lisätiedot
 "Faster"
     Nopeampi
 "ffmpeg with MP3 support not detected"
@@ -536,8 +523,7 @@
     Ensimmäisen jakson ensimmäinen lähetys
 "Flag Commercials"
     Merkitse mainokset
-"FLV Width"
-    FLV Leveys
+"FLV Height"
 "For daily recordings, 5 weekdays if a weekday, or 7 days per week if a weekend day."
     Päivittäisille tallennuksille, 5 viikonpäivää jos arkipäivä, tai 7 päivää viikossa jos viikonloppu.
 "For more information on the Power Search please go to:"
@@ -626,9 +612,9 @@
 "Inactive Screens"
     Ei aktiiviset näytöt
 "info: activate recording"
-   Pakota tämän ohjelman tallennus
+    Pakota tämän ohjelman tallennus
 "info: default recording"
-   Poista kaikki lisämääreet siten että tämä esitys tallennetaan normaalisti.
+    Poista kaikki lisämääreet siten että tämä esitys tallennetaan normaalisti.
 "info: dont record"
     Älä tallenna
 "info: flvplayer"
@@ -713,8 +699,6 @@
     Pituus (min)
 "Length in minutes"
     Kesto minuuteissa
-"Links"
-    Linkit
 "Listing &quot;Jump to&quot;"
     Listauksen hyppy
 "Listing Time Key"
@@ -1057,12 +1041,8 @@
     Ohjelmakategoriat
 "Program Detail"
     Ohjelman Lisätietoja
-"Program Flags"
-    Ohjelman liput
 "Program ID"
     Ohjelman tunnus
-"Program Information"
-    Ohjelmatiedot
 "Program Listing"
     Ohjelmalistaus
 "Program Type"
@@ -1110,8 +1090,6 @@
     Tallennuksen yksityiskohdat
 "Recording Group"
     Tallennusryhmä
-"Recording Groups"
-    Tallennusryhmät
 "Recording Options"
     Tallennusvalinnat
 "Recording Options Help"
@@ -1124,8 +1102,6 @@
     Tulevat tallennukset
 "Recording Statistics"
     Tallennuksen statistiikat
-"Recording Titles"
-    Tallennusten nimikkeet
 "recpriority"
     Tallennusprioriteetti
 "recstatus: cancelled"
@@ -1223,7 +1199,7 @@
 "Reset"
     Alustus
 "Reset template and skin to defaults"
-     Resetoi teema ja skin oletuksiin
+    Resetoi teema ja skin oletuksiin
 "Retry"
     Yritä uudelleen
 "Return to Statistics Page"
@@ -1302,7 +1278,6 @@
     Haut
 "Searches will be performed against the title of all TV shows"
 "Season"
-"Series ID"
 "Server Statistics"
     Serverin statistiikkaa
 "Set Host"
@@ -1495,7 +1470,6 @@
     Televisio
 "TV functions, including recorded programs."
     Tallennetut ohjelmat ja muut TV-asetukset.
-"TV Submenu"
 "TV.com"
     TV.com
 "type"
@@ -1589,8 +1563,6 @@
     Näkyvä
 "Visit $1"
     Vieraile $1
-"Watch on frontend"
-"Watch on iPod/iPhone"
 "Watched"
     Katsottu
 "Weather"
@@ -1624,8 +1596,6 @@
     Mitä muuta on tähän aikaan?
 "Widescreen"
     Laajakuva
-"Width"
-    Leveys
 "Will Record"
     Tulee tallentamaan
 "Wind"

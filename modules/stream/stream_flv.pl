@@ -138,7 +138,7 @@ if ($size > 1) {
 
 # Load some conversion settings from the database
     $sh = $dbh->prepare('SELECT data FROM settings WHERE value=? AND hostname IS NULL');
-    $sh->execute('WebFLV_w');
+    $sh->execute('WebFLV_h');
     my ($height)    = $sh->fetchrow_array;
     $sh->execute('WebFLV_vb');
     my ($vbitrate) = $sh->fetchrow_array;
@@ -170,7 +170,6 @@ if ($size > 1) {
 			.' -vcodec libx264'
                         .' -b '.shell_escape("${vbitrate}k")
 			.' -preset fast'
-			.' -tune animation'
 			.' -profile baseline'
 			.' -level 3.0'
 			.' -deinterlace'
@@ -178,7 +177,6 @@ if ($size > 1) {
 			.' -f flv'
 			.' -acodec libfaac'
                         .' -ac 2'
-			.' -aq 100'
                         .' -ar 44100'
                         .' -ab '.shell_escape("${abitrate}k")
                         .' /dev/stdout 2>/dev/null |';

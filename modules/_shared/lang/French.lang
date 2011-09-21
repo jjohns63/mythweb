@@ -61,8 +61,7 @@
     %s morceaux
 "%s Songs (%s)"
     %s morceaux (%s)
-"(height is calculated automatically from the recording aspect ratio)"
-    (la hauteur est calculée automatiquement en fonction du ratio de l'enregistrement)
+"(width is calculated automatically from the recording aspect ratio)"
 "1 - Lowest"
     1 - Laxiste
 "18 Hour Forecast"
@@ -75,8 +74,6 @@
     En interruption
 "Action"
     Action
-"Actions"
-    Actions
 "Activate"
     Activer
 "Active Screens"
@@ -173,8 +170,6 @@
     Êtes-vous sûr de vouloir supprimer cette émission ?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
     Êtes-vous sur de vouloir SUPPRIMER CETTE LISTE DE LECTURE SAUVEGARDÉE ?
-"Are you sure you want to delete this show?"
-    Êtes-vous sûr de vouloir supprimer ce programme ?
 "Artist Listing"
     Liste des artistes
 "Artists"
@@ -260,8 +255,6 @@
     Verr. maj.
 "Cast"
     Distribution
-"Cast Information"
-    Information sur la distribution
 "category"
     catégorie
 "Category"
@@ -390,8 +383,6 @@
     Supprimer et réenregistrer
 "Delete and allow rerecord: $1"
     Supprimer et autoriser le réenregistrement : $1
-"Delete and rerecord"
-    Supprimer et réenregistrer
 "Delete and rerecord $1"
     Supprimer et réenregistrer $1
 "Delete Forever"
@@ -502,12 +493,8 @@
     Exclure les rediffusions
 "Exec. Producer"
     Producteur exécutif
-"Executive Producer"
-    Producteur exécutif
 "Extended Check"
     Contrôle étendu
-"Extra Information"
-    Informations supplémentaires
 "Faster"
     Plus vite
 "ffmpeg with MP3 support not detected"
@@ -542,8 +529,7 @@
     Première diffusion de chaque épisode
 "Flag Commercials"
     Baliser les publicités
-"FLV Width"
-    Largeur FLV
+"FLV Height"
 "For daily recordings, 5 weekdays if a weekday, or 7 days per week if a weekend day."
     Pour les enregistrements journaliers, 5 jours par semaine hors week-end ou 7 jours.
 "For more information on the Power Search please go to:"
@@ -720,8 +706,6 @@
     Durée (min)
 "Length in minutes"
     Durée en minutes
-"Links"
-    Liens
 "Listing &quot;Jump to&quot;"
     Guide : "Aller à"
 "Listing Time Key"
@@ -1068,12 +1052,8 @@
     Catégories de programme
 "Program Detail"
     Détails du programme
-"Program Flags"
-    Caractéristiques du programme
 "Program ID"
     Identifiant du programme
-"Program Information"
-    Informations sur le programme
 "Program Listing"
     Guide des programmes
 "Program Type"
@@ -1122,8 +1102,6 @@
     Détails de l'enregistrement
 "Recording Group"
     Groupe d'enregistrements
-"Recording Groups"
-    Groupes d'enregistrements
 "Recording Options"
     Options d'enregistrement
 "Recording Options Help"
@@ -1136,8 +1114,6 @@
     Programmations des enregistrements
 "Recording Statistics"
     Statistiques d'enregistrement
-"Recording Titles"
-    Titres d'enregistrements
 "recpriority"
     priorité d'enregistrement
 "recstatus: cancelled"
@@ -1324,8 +1300,6 @@
     Les recherches seront effectuées sur le titre de tous les programmes TV
 "Season"
     Saison
-"Series ID"
-    Identifiant de la série
 "Server Statistics"
     Statistiques du serveur
 "Set Host"
@@ -1536,8 +1510,6 @@
     TV
 "TV functions, including recorded programs."
     Fonctions TV, incluant les programmes enregistrés.
-"TV Submenu"
-    Sous-menu TV
 "TV.com"
     TV.com
 "type"
@@ -1647,10 +1619,6 @@
     visible
 "Visit $1"
     Visitez $1
-"Watch on frontend"
-    Regarder sur le frontal
-"Watch on iPod/iPhone"
-    Regarder sur iPod/iPhone
 "Watched"
     Vu
 "Weather"
@@ -1687,8 +1655,6 @@
     Quoi d'autre à cette heure ?
 "Widescreen"
     Écran 16/9e
-"Width"
-    Largeur
 "Will Record"
     Sera enregistré
 "Wind"

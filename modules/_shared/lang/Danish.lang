@@ -61,8 +61,7 @@
     %s sange
 "%s Songs (%s)"
     %s sange (%s)
-"(height is calculated automatically from the recording aspect ratio)"
-    (højden er udregnet automatisk udfra optagelsens aspekt ratio)
+"(width is calculated automatically from the recording aspect ratio)"
 "1 - Lowest"
     1 - Lavest
 "18 Hour Forecast"
@@ -75,8 +74,6 @@
     Afbryder
 "Action"
     Handling
-"Actions"
-    Handlinger
 "Activate"
     Aktiver
 "Active Screens"
@@ -172,8 +169,6 @@
     Er du sikker på at du vil slette programmet?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
     Er du sikker på at du vil slette denne gemte afspilningsliste?
-"Are you sure you want to delete this show?"
-    Er du sikker på at du vil slette denne udsendelse?
 "Artist Listing"
     Kunstner liste
 "Artists"
@@ -257,8 +252,6 @@
     Caps lock
 "Cast"
     Rolleliste
-"Cast Information"
-    Rolleliste information
 "category"
     kategori
 "Category"
@@ -387,8 +380,6 @@
     Slet + genoptag
 "Delete and allow rerecord: $1"
     Slet og tillad genoptagelse: $1
-"Delete and rerecord"
-    Slet og genoptag
 "Delete and rerecord $1"
     Slet og genoptag $1
 "Delete Forever"
@@ -498,12 +489,8 @@
     Ekskluder gentagne episoder
 "Exec. Producer"
     Producer
-"Executive Producer"
-    Executive Producer
 "Extended Check"
     Udvidet kontrol
-"Extra Information"
-    Ekstra information
 "Faster"
     Hurtigere
 "ffmpeg with MP3 support not detected"
@@ -538,8 +525,7 @@
     Første visning af alle episoder
 "Flag Commercials"
     Reklame mærkning
-"FLV Width"
-    FLV bredde
+"FLV Height"
 "For daily recordings, 5 weekdays if a weekday, or 7 days per week if a weekend day."
     For daglige optagelser, 5 ugedage hvis en hverdag, eller 7 dage pr. uge hvis en weekenddag.
 "For more information on the Power Search please go to:"
@@ -707,8 +693,6 @@
     Længde (min)
 "Length in minutes"
     Længde i minutter
-"Links"
-    Links
 "Listing &quot;Jump to&quot;"
     Programoversigt &quot;Gå til&quot;
 "Listing Time Key"
@@ -1050,12 +1034,8 @@
     Udsendelses kategorier
 "Program Detail"
     Udsendelses detaljer
-"Program Flags"
-    Program flag
 "Program ID"
     Udsendelses ID
-"Program Information"
-    Udsendelses information
 "Program Listing"
     Programoversigt
 "Program Type"
@@ -1104,8 +1084,6 @@
     Optagelses detaljer
 "Recording Group"
     Optagelsesgruppe
-"Recording Groups"
-    Optagelsesgrupper
 "Recording Options"
     Optagelsesindstillinger
 "Recording Options Help"
@@ -1118,8 +1096,6 @@
     Optagelsesplanlægning
 "Recording Statistics"
     Optagelses statistik
-"Recording Titles"
-    Optagelsestitler
 "recpriority"
     Optagelsesprioritet
 "recstatus: cancelled"
@@ -1306,8 +1282,6 @@
     Søgningen vil gennemgå alle titler på alle udsendelser
 "Season"
     Sæson
-"Series ID"
-    Serie ID
 "Server Statistics"
     Server statistik
 "Set Host"
@@ -1513,8 +1487,6 @@
     Tv
 "TV functions, including recorded programs."
     TV funktioner inkl. optagede programmer
-"TV Submenu"
-    Tv undermenu
 "TV.com"
     TV.com
 "type"
@@ -1613,10 +1585,6 @@
     synlig
 "Visit $1"
     Besøg $1
-"Watch on frontend"
-    Se på frontend
-"Watch on iPod/iPhone"
-    Se på iPod/iPhone
 "Watched"
     Set
 "Weather"
@@ -1653,8 +1621,6 @@
     Hvad er der i fjernsynet på dette tidspunkt?
 "Widescreen"
     Widescreen
-"Width"
-    Bredde
 "Will Record"
     Skal optage
 "Wind"

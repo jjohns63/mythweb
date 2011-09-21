@@ -59,7 +59,7 @@
     %s Dal
 "%s Songs (%s)"
     %s Dal (%s)
-"(height is calculated automatically from the recording aspect ratio)"
+"(width is calculated automatically from the recording aspect ratio)"
 "1 - Lowest"
 "18 Hour Forecast"
 "4 - Highest"
@@ -69,8 +69,6 @@
     Megszakítás
 "Action"
     Művelet
-"Actions"
-    Műveletek
 "Activate"
     Aktíválás
 "Active Screens"
@@ -161,7 +159,6 @@
     Valóban törlöd a következő műsort?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
     Valóban törlöd ezt az elmentett lejátszási listát?
-"Are you sure you want to delete this show?"
 "Artist Listing"
     Előadók listája
 "Artists"
@@ -244,8 +241,6 @@
     Caps Lock
 "Cast"
     Válogatás
-"Cast Information"
-    Válogatás info
 "category"
     kategória
 "Category"
@@ -368,8 +363,6 @@
     Törlés + Újravesz
 "Delete and allow rerecord: $1"
     Töröl és megengedi az újravételt: $1
-"Delete and rerecord"
-    Töröl és újravesz
 "Delete and rerecord $1"
     Töröl és újravesz: $1
 "Delete Forever"
@@ -471,12 +464,8 @@
     Ismétlések kivételével
 "Exec. Producer"
     Külső támogató
-"Executive Producer"
-    Vezető Producer
 "Extended Check"
     Részletes vizsgálat
-"Extra Information"
-    Extra Információ
 "Faster"
 "ffmpeg with MP3 support not detected"
 "File Size"
@@ -508,7 +497,7 @@
 "First showing of each episode"
 "Flag Commercials"
     Reklámok jelölése
-"FLV Width"
+"FLV Height"
 "For daily recordings, 5 weekdays if a weekday, or 7 days per week if a weekend day."
 "For more information on the Power Search please go to:"
 "Force HTTP for streams"
@@ -675,8 +664,6 @@
 "Length (min)"
     Hossz (perc)
 "Length in minutes"
-"Links"
-    Hivatkozások
 "Listing &quot;Jump to&quot;"
     &quot;Ugrás&quot Listázás;
 "Listing Time Key"
@@ -980,12 +967,8 @@
 "Program Categories"
 "Program Detail"
     Program részletei
-"Program Flags"
-    Műsorjelzők
 "Program ID"
     Műsor ID
-"Program Information"
-    Műsor Információ
 "Program Listing"
     Program listázás
 "Program Type"
@@ -1033,8 +1016,6 @@
     A felvétel részletei
 "Recording Group"
     Felvételi csoport
-"Recording Groups"
-    Felvételi Csoportok
 "Recording Options"
     A felvétel opciói
 "Recording Options Help"
@@ -1046,8 +1027,6 @@
     Felvételi szabálytábla
 "Recording Statistics"
     Felvételi statisztika
-"Recording Titles"
-    Felvételek Címei
 "recpriority"
     felvelsőbbség
 "recstatus: cancelled"
@@ -1223,8 +1202,6 @@
     Keresőprofilok
 "Searches will be performed against the title of all TV shows"
 "Season"
-"Series ID"
-    Sorozat ID
 "Server Statistics"
     Szerver statisztikák
 "Set Host"
@@ -1421,8 +1398,6 @@
     TV
 "TV functions, including recorded programs."
     A TV funkciói felvételekkel
-"TV Submenu"
-    TV almenü
 "TV.com"
     TV.com
 "type"
@@ -1529,8 +1504,6 @@
     Látható
 "Visit $1"
     A(z) $1 látogatása
-"Watch on frontend"
-"Watch on iPod/iPhone"
 "Watched"
     Megtekintve
 "Weather"
@@ -1565,8 +1538,6 @@
     Mi más van még ebben az időpontban?
 "Widescreen"
     Széles képernyő
-"Width"
-    Szélesség
 "Will Record"
     Rögzítve lesz
 "Wind"

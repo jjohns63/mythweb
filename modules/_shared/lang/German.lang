@@ -60,8 +60,7 @@
     %s Lieder
 "%s Songs (%s)"
     %s Lieder (%s)
-"(height is calculated automatically from the recording aspect ratio)"
-    (die Höhe wird automatisch anhand des Seitenverhältnisses der Aufnahme berechnet)
+"(width is calculated automatically from the recording aspect ratio)"
 "1 - Lowest"
     1 - Niedrigste
 "18 Hour Forecast"
@@ -74,8 +73,6 @@
     Abgebrochen
 "Action"
     Aktion
-"Actions"
-    Aktionen
 "Activate"
     Aktivieren
 "Active Screens"
@@ -172,8 +169,6 @@
     Diese Aufnahme wirklich löschen?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
     Sind Sie sicher, daß Sie diese gespeicherte Wiedergabeliste löschen wollen?
-"Are you sure you want to delete this show?"
-    Sind Sie sicher, daß Sie diese Sendung löschen wollen?
 "Artist Listing"
     Nach Interpreten
 "Artists"
@@ -257,8 +252,6 @@
 "Caps Lock"
     Feststelltaste
 "Cast"
-    Besetzung
-"Cast Information"
     Besetzung
 "category"
     Kategorie
@@ -388,8 +381,6 @@
     Löschen und erneut aufnehmen
 "Delete and allow rerecord: $1"
     Löschen und &quot;$1&quot; erneut aufnehmen
-"Delete and rerecord"
-    Löschen und erneut aufnehmen
 "Delete and rerecord $1"
     Löschen und &quot;$1&quot; erneut aufnehmen
 "Delete Forever"
@@ -457,7 +448,7 @@
 "Editing "
     Bearbeite
 "Embed HTTP basic auth user name/password into stream urls"
-   Bette HTTP basic auth Benutzername/Passwort in Stream URLs ein 
+    Bette HTTP basic auth Benutzername/Passwort in Stream URLs ein
 "Enable Flash Video player for recordings."
     Flash-Videoabpsieler für Aufnahmen aktivieren.
 "Enable Video Playback"
@@ -499,12 +490,8 @@
     keine Wiederholungen
 "Exec. Producer"
     Produzent
-"Executive Producer"
-    Ausführender Produzent
 "Extended Check"
     Erweiterte Prüfung
-"Extra Information"
-    Weitere Informationen
 "Faster"
     Schneller
 "ffmpeg with MP3 support not detected"
@@ -539,8 +526,7 @@
     Erste Ausstrahlung jeder Folge
 "Flag Commercials"
     Werbung markieren
-"FLV Width"
-    FLV Breite
+"FLV Height"
 "For daily recordings, 5 weekdays if a weekday, or 7 days per week if a weekend day."
     Für tägliche Aufnahmen, 5 Wochentage an einem Arbeitstag oder 7 Tage am Wochenende.
 "For more information on the Power Search please go to:"
@@ -703,8 +689,6 @@
     Dauer (Min.)
 "Length in minutes"
     Dauer in Minuten
-"Links"
-    Links
 "Listing &quot;Jump to&quot;"
     TV-Programm &quot;Gehe zu&quot;
 "Listing Time Key"
@@ -899,7 +883,7 @@
 "Only one specific channel ID (Channel priority)"
     nur ein bestimmter Sender (Senderpriorität)
 "Only show distinct shows"
-    nur einzelne Sendungen 
+    nur einzelne Sendungen
 "Only shows marked as HDTV"
     nur Sendungen in HDTV
 "Optimize Tables"
@@ -1045,12 +1029,8 @@
     Programmkategorien
 "Program Detail"
     Programmdetails
-"Program Flags"
-    Programmmarkierungen
 "Program ID"
     Programm ID
-"Program Information"
-    Programminformationen
 "Program Listing"
     TV-Programm
 "Program Type"
@@ -1099,8 +1079,6 @@
     Aufnahmedetails
 "Recording Group"
     Aufnahmegruppe
-"Recording Groups"
-    Aufnahmegruppen
 "Recording Options"
     Aufnahmeoptionen
 "Recording Options Help"
@@ -1113,8 +1091,6 @@
     Aufnahmemodi
 "Recording Statistics"
     Aufnahmestatistiken
-"Recording Titles"
-    Aufnahmetitel
 "recpriority"
     Aufnahmepriorität
 "recstatus: cancelled"
@@ -1212,7 +1188,7 @@
 "Reset"
     Zurücksetzen
 "Reset template and skin to defaults"
-    Vorlage und Aussehen zum Standard zurücksetzen    
+    Vorlage und Aussehen zum Standard zurücksetzen
 "Retry"
     Wiederholen
 "Return to Statistics Page"
@@ -1294,15 +1270,13 @@
 "Search Type Help"
     Suchtyp Hilfe
 "Search will perform complex SQL queries against the database as per the search phrase below"
-   Die Suche wird durch den Suchtext komplexe SQL Abfragen gegen die Datenbank stellen
+    Die Suche wird durch den Suchtext komplexe SQL Abfragen gegen die Datenbank stellen
 "Searches"
     Suchen
 "Searches will be performed against the title of all TV shows"
     Die Suchen werden gegen alle Sendungstitel gerichtet sein
 "Season"
     Staffel
-"Series ID"
-    Serien-ID
 "Server Statistics"
     Serverstatistik
 "Set Host"
@@ -1502,8 +1476,6 @@
     TV
 "TV functions, including recorded programs."
     TV-Funktionen inkl. allen Aufnahmen
-"TV Submenu"
-    TV-Untermenü
 "TV.com"
     TV.com
 "type"
@@ -1603,10 +1575,6 @@
     Sichtbar
 "Visit $1"
     Besuche $1
-"Watch on frontend"
-    Auf dem Frontend ansehen
-"Watch on iPod/iPhone"
-    Auf dem iPod/iPhone ansehen
 "Watched"
     Gesehen
 "Weather"
@@ -1639,8 +1607,6 @@
     Was läuft noch zu dieser Zeit?
 "Widescreen"
     Breitbild
-"Width"
-    Breite
 "Will Record"
     geplante Aufnahme
 "Wind"

@@ -48,12 +48,12 @@
                 echo ' '.t('ffmpeg with MP3 support not detected');
             ?></td>
 </tr><tr>
-    <th valign="top"><?php echo t('Width') ?>:</th>
-    <td><input type="text" name="width"
-         size="5" title="<?php echo t('FLV Width') ?>"
-         value="<?php echo intVal(_or(setting('WebFLV_w'), 320)) ?>" />
+    <th valign="top"><?php echo t('Height') ?>:</th>
+    <td><input type="text" name="height"
+         size="5" title="<?php echo t('FLV Height') ?>"
+         value="<?php echo intVal(_or(setting('WebFLV_h'), 320)) ?>" />
          <br>
-         <?php echo t('(height is calculated automatically from the recording aspect ratio)') ?>
+         <?php echo t('(width is calculated automatically from the recording aspect ratio)') ?>
          </td>
 </tr><tr>
     <th><?php echo t('Video Bitrate') ?>:</th>

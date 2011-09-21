@@ -60,8 +60,7 @@
     %s Skladby
 "%s Songs (%s)"
     %s Skladby (%s)
-"(height is calculated automatically from the recording aspect ratio)"
-    (výška je automaticky počítána z poměru stran nahrávky)
+"(width is calculated automatically from the recording aspect ratio)"
 "1 - Lowest"
     1 - nejnižší
 "18 Hour Forecast"
@@ -73,8 +72,6 @@
     Ruším
 "Action"
     Činnost
-"Actions"
-    Činnosti
 "Activate"
     Zapnout
 "Active Screens"
@@ -165,8 +162,6 @@
     Opravdu smazat následující představení?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
     Opravdu smazat TENTO ULOŽENÝ PLAYLIST?
-"Are you sure you want to delete this show?"
-    Opravdu smazat toto představení?
 "Artist Listing"
     Seznam umělců
 "Artists"
@@ -247,8 +242,6 @@
     Caps Lock
 "Cast"
     Obsazení
-"Cast Information"
-    Informace o obsazení
 "category"
     kategorie
 "Category"
@@ -365,8 +358,6 @@
     Smazat + Znovunahrát
 "Delete and allow rerecord: $1"
     Smazat a povolit znovunahrání: $1
-"Delete and rerecord"
-    Smazat a znovunahrát
 "Delete and rerecord $1"
     Smazat a znovunahrát $1
 "Delete Forever"
@@ -464,10 +455,7 @@
 "Exclude Repeat Episodes"
     S vyjímkou opakujících se epizod
 "Exec. Producer"
-"Executive Producer"
-    Výkonný producent
 "Extended Check"
-"Extra Information"
 "Faster"
 "ffmpeg with MP3 support not detected"
     ffmpeg s podporou MP3 nenalezen
@@ -496,7 +484,7 @@
     První zobrazení každé epizody
 "Flag Commercials"
     Označit reklamy
-"FLV Width"
+"FLV Height"
 "For daily recordings, 5 weekdays if a weekday, or 7 days per week if a weekend day."
 "For more information on the Power Search please go to:"
     Pro více informací o pokročilém vyhledávání jdi na:
@@ -634,7 +622,6 @@
     Délka (min)
 "Length in minutes"
     Délka v minutách
-"Links"
 "Listing &quot;Jump to&quot;"
 "Listing Time Key"
 "Listings"
@@ -862,11 +849,8 @@
 "Program Categories"
     Kategorie programů
 "Program Detail"
-"Program Flags"
 "Program ID"
     ID programu
-"Program Information"
-    Informace o programu
 "Program Listing"
     Výpis pořadů
 "Program Type"
@@ -899,7 +883,6 @@
     Nahrané pořady
 "Recording Details"
 "Recording Group"
-"Recording Groups"
 "Recording Options"
 "Recording Options Help"
 "Recording Priority"
@@ -909,7 +892,6 @@
 "Recording Schedules"
     Rozvrhy nahrávání
 "Recording Statistics"
-"Recording Titles"
 "recpriority"
 "recstatus: cancelled"
     This was scheduled to be recorded but was manually canceled.
@@ -1059,7 +1041,6 @@
     Vyhledávání
 "Searches will be performed against the title of all TV shows"
 "Season"
-"Series ID"
 "Server Statistics"
 "Set Host"
 "Settings"
@@ -1178,7 +1159,6 @@
 "TV"
 "TV functions, including recorded programs."
     TV funkce včetně nahraných pořadů
-"TV Submenu"
 "TV.com"
 "type"
 "Type"
@@ -1240,8 +1220,6 @@
 "visible"
     viditelný
 "Visit $1"
-"Watch on frontend"
-"Watch on iPod/iPhone"
 "Watched"
 "Weather"
     Počasí
@@ -1269,7 +1247,6 @@
     Get the local weather forecast.
 "What else is on at this time?"
 "Widescreen"
-"Width"
 "Will Record"
 "Wind"
 "Wind Chill"

@@ -20,13 +20,13 @@
 // Custom headers
     $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_schedule.css">';
     $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_detail.css">';
-    $headers[] = '<script type="text/javascript" src="'.root_url.'js/flowplayer-3.2.6.min.js"></script>';
+    $headers[] = '<script type="text/javascript" src="'.root_url.'js/flowplayer-3.2.4.min.js"></script>';
 
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
 
     if ($program && $program->filename) {
-        $flv_h = setting('WebFLV_w');
+        $flv_h = setting('WebFLV_h');
         $flv_w = intVal($flv_h * $program->getAspect());
     }
 
@@ -559,7 +559,7 @@
 
             <div class="x-pixmap">
 <?php   if (setting('WebFLV_on')) { ?>
-<?php       if (file_exists('modules/tv/flowplayer-3.2.7.swf')) { ?>
+<?php       if (file_exists('modules/tv/flowplayer-3.2.5.swf')) { ?>
 
           <!-- this A tag is where your Flowplayer will be placed. it can be anywhere -->
             <a href=""
@@ -569,11 +569,11 @@
 
             <!-- this will install flowplayer inside previous A- tag. -->
             <script>
-                flowplayer("player", "http://releases.flowplayer.org/swf/flowplayer-3.2.7.swf", {
+                flowplayer("player", "http://releases.flowplayer.org/swf/flowplayer-3.2.5.swf", {
                     // change the default controlbar to transparent
                     plugins: {
                         controls: {
-                            url: 'flowplayer.controls-3.2.5.swf',
+                            url: 'flowplayer.controls-3.2.3.swf',
 
                             backgroundColor: "transparent",
                             backgroundGradient: "none",

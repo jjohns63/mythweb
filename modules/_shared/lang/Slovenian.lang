@@ -54,7 +54,7 @@
     %s Pesmi
 "%s Songs (%s)"
     %s Pesmi (%s)
-"(height is calculated automatically from the recording aspect ratio)"
+"(width is calculated automatically from the recording aspect ratio)"
 "1 - Lowest"
 "18 Hour Forecast"
 "4 - Highest"
@@ -64,7 +64,6 @@
     Preklicujem
 "Action"
     Akcija
-"Actions"
 "Activate"
     Aktiviraj
 "Active Screens"
@@ -152,7 +151,6 @@
     Ste prepričani, da želite izbrisati to oddajo?
 "Are you sure you want to DELETE THIS SAVED PLAYLIST?"
     Ste prepričani da želite IZBRISATI TA PREDVAJALNI SEZNAM?
-"Are you sure you want to delete this show?"
 "Artist Listing"
     Seznam izvajalcev
 "Artists"
@@ -231,7 +229,6 @@
 "Caps Lock"
 "Cast"
     Zasedba
-"Cast Information"
 "category"
     kategorija
 "Category"
@@ -350,7 +347,6 @@
     Odstrani + Ponovno snemaj
 "Delete and allow rerecord: $1"
     Odstrani in dopusti ponovno snemanje: $1
-"Delete and rerecord"
 "Delete and rerecord $1"
     Odstrani + ponovno posnami $1
 "Delete Forever"
@@ -446,10 +442,8 @@
     Izključi ponovitve oddaj
 "Exec. Producer"
     Scenarist
-"Executive Producer"
 "Extended Check"
     Podrobni pregled
-"Extra Information"
 "Faster"
 "ffmpeg with MP3 support not detected"
 "File Size"
@@ -480,7 +474,7 @@
 "First showing of each episode"
 "Flag Commercials"
     Označi reklame
-"FLV Width"
+"FLV Height"
 "For daily recordings, 5 weekdays if a weekday, or 7 days per week if a weekend day."
 "For more information on the Power Search please go to:"
 "Force HTTP for streams"
@@ -636,7 +630,6 @@
 "Length (min)"
     Trajanje (min)
 "Length in minutes"
-"Links"
 "Listing &quot;Jump to&quot;"
     TV spored &quot;Skoči na&quot;
 "Listing Time Key"
@@ -934,10 +927,8 @@
 "Program Categories"
 "Program Detail"
     Opis programa
-"Program Flags"
 "Program ID"
     ID programa
-"Program Information"
 "Program Listing"
     TV spored
 "Program Type"
@@ -982,7 +973,6 @@
     Podrobnosti o snemanju
 "Recording Group"
     Snemalne skupine
-"Recording Groups"
 "Recording Options"
     Snemalne možnosti
 "Recording Options Help"
@@ -994,7 +984,6 @@
     Snemalni plani
 "Recording Statistics"
     Statistike snemanja
-"Recording Titles"
 "recpriority"
     snemalna prioriteta
 "recstatus: cancelled"
@@ -1168,7 +1157,6 @@
     Iskanja
 "Searches will be performed against the title of all TV shows"
 "Season"
-"Series ID"
 "Server Statistics"
     Stratistike strežnika
 "Set Host"
@@ -1351,7 +1339,6 @@
 "TV"
 "TV functions, including recorded programs."
     Funkcije TV, vključno z posnetimi programi.
-"TV Submenu"
 "TV.com"
 "type"
     tip
@@ -1457,8 +1444,6 @@
     viden
 "Visit $1"
     Obišči $1
-"Watch on frontend"
-"Watch on iPod/iPhone"
 "Watched"
     Pogledano
 "Weather"
@@ -1495,7 +1480,6 @@
     Kaj je še ob tem času?
 "Widescreen"
     Široki zaslon
-"Width"
 "Will Record"
     Se bo posnelo
 "Wind"

@@ -22,7 +22,7 @@
 
 
 # File size
-    my $size = -s $flv_filename;
+    my $size = -s $flv_filename || 0;
 
 # Zero bytes?
 if ($size > 1) {
@@ -170,7 +170,7 @@ if ($size > 1) {
 			.' -vcodec libx264'
                         .' -b '.shell_escape("${vbitrate}k")
 			.' -preset fast'
-			.' -profile baseline'
+#			.' -profile baseline'
 			.' -level 3.0'
 			.' -deinterlace'
 			.' -threads 0'

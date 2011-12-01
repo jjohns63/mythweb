@@ -38,6 +38,7 @@ class MythFrontend extends MythBase {
         $frontends = Cache::get('MythFrontends[Frontends]');
 
         if (!is_array($frontends) || count($frontends) == 0) {
+error_log('Cache Didnt work');
             global $db;
 
             $frontends = array();
@@ -260,7 +261,11 @@ class MythFrontend extends MythBase {
         $starttime = date('Y-m-d\TH:i:s', $starttime);
         return $this->send_play("program $chanid $starttime resume");
     }
+
     
+    public function play_video($filename) {
+        return $this->send_play("file $filename");
+    }
 /**
  * Tell the frontend to play a specific program
  *

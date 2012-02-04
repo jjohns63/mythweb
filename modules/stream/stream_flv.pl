@@ -168,17 +168,16 @@ if ($size > 1) {
                         .' -i '.shell_escape($filename)
                         .' -s '.shell_escape("${width}x${height}")
 			.' -vcodec libx264'
-                        .' -b '.shell_escape("${vbitrate}k")
-			.' -preset fast'
-#			.' -profile baseline'
-			.' -level 3.0'
+                        .' -b:v '.shell_escape("${vbitrate}k")
+			.' -vpre mythweb'
+			.' -vprofile baseline'
 			.' -deinterlace'
 			.' -threads 0'
 			.' -f flv'
 			.' -acodec libfaac'
                         .' -ac 2'
                         .' -ar 44100'
-                        .' -ab '.shell_escape("${abitrate}k")
+                        .' -b:a '.shell_escape("${abitrate}k")
                         .' /dev/stdout 2>/dev/null |';
 
 # Print the movie

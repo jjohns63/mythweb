@@ -561,11 +561,10 @@
 <?php   if (setting('WebFLV_on')) { ?>
 <?php       if (file_exists('modules/tv/flowplayer-3.2.5.swf')) { ?>
 
-          <!-- this A tag is where your Flowplayer will be placed. it can be anywhere -->
-            <a href=""
-                style="display:block;width:<?php echo $flv_w ?>px;height:<?php echo $flv_h ?>px"
-                id="player">
-            </a>
+          <!-- this DIV tag is where your Flowplayer will be placed. it can be anywhere -->
+            <div id="player"
+                 style="display:block;width:<?php echo $flv_w ?>px;height:<?php echo $flv_h ?>px">
+            </div>
 
             <!-- this will install flowplayer inside previous A- tag. -->
             <script>
@@ -615,28 +614,6 @@
                     }
                 });
             </script>
-            <!--
-            <script>
-                flowplayer("player", "<?php echo root_url ?>tv/flowplayer-3.1.5.swf", {
-                    playlist: [
-                        // this first PNG clip works as a splash image
-                        {
-                            url: '<?php echo $program->thumb_url($flv_w,0) ?>',
-                            scaling: 'fit'
-                        },
-                        // Then we have the video
-                        {
-                            url: "<?php echo video_url($program, 'flv'); ?>",
-                            // duration: <?php echo $program->length ?>,
-                            autoPlay: false,
-                            scaling: 'fit',
-                            // Would be nice to auto-buffer, but we don't want to
-                            // waste bandwidth and CPU on the remote machine.
-                            autoBuffering: false
-                        }
-                    ]
-                });
-            </script> -->
 <?php       } elseif (file_exists('modules/tv/MFPlayer.swf')) { ?>
                     <script language="JavaScript" type="text/javascript">
                     <!--

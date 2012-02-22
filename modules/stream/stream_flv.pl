@@ -10,6 +10,7 @@
 
     use POSIX qw(ceil floor);
     use HTTP::Date;
+    use Switch;
     $| = 1;
 
     $flv_filename = $filename;
@@ -150,16 +151,31 @@ if ($size > 1) {
     my ($abitrate) = $sh->fetchrow_array;
     $sh->finish();
 # auto-detect height based on aspect ratio
-    $sh = $dbh->prepare('SELECT data FROM recordedmarkup WHERE chanid=? AND starttime=FROM_UNIXTIME(?) AND (type=30 OR type=31) AND mark<10 AND data IS NOT NULL ORDER BY type');
+    $sh = $dbh->prepare('SELECT recordedmarkup.type
+                           FROM recordedmarkup
+                          WHERE recordedmarkup.chanid    = ?
+                            AND recordedmarkup.starttime = FROM_UNIXTIME(?)
+                            AND recordedmarkup.type      IN (10, 11, 12, 13, 14)
+ 	                   GROUP BY recordedmarkup.type
+                       ORDER BY SUM((SELECT IFNULL(rm.mark, recordedmarkup.mark)
+ 	                                   FROM recordedmarkup AS rm
+                                      WHERE rm.chanid = recordedmarkup.chanid
+ 	                                    AND rm.starttime = recordedmarkup.starttime
+                                        AND rm.type IN (10, 11, 12, 13, 14)
+                                        AND rm.mark > recordedmarkup.mark
+                                   ORDER BY rm.mark ASC LIMIT 1)- recordedmarkup.mark) DESC
+                          LIMIT 1');
     $sh->execute($chanid,$starttime);
-    $x = $sh->fetchrow_array;           # type = 30
-    $y = $sh->fetchrow_array if ($x);   # type = 31
+    $aspect = $sh->fetchrow_array;           # type = 30
     $height = round_even($height);
-    if ($x && $y) {
-        $width = round_even($height * ($x/$y));
-    } else {
-        $width = round_even($height * 4/3);
+    switch($aspect) {
+        case 10 { $width = $height * 1; }
+        case 12 { $width = $height * 16/9; }
+        case 13 { $width = $height * 2.21/1; }
+        case [11,14] { $width = $height * 4/3; }
+        else { $width = $height * 4/3; }
     }
+    $width = round_even($width);
     $sh->finish();
 
     $width    = 320 unless ($width    && $width    > 1);

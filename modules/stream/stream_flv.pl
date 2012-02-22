@@ -9,7 +9,98 @@
 #
 
     use POSIX qw(ceil floor);
+    use HTTP::Date;
+    $| = 1;
 
+    $flv_filename = $filename;
+    $flv_basename = $basename;
+
+    $flv_filename =~ s/mpg$/flv/g;
+    $flv_basename =~ s/mpg$/flv/g;
+    $flv_filename =~ s/nuv$/flv/g;
+    $flv_basename =~ s/nuv$/flv/g;
+
+
+# File size
+    my $size = -s $flv_filename || 0;
+
+# Zero bytes?
+if ($size > 1) {
+# File type
+    my $type   = 'video/x-flv';
+    my $suffix = '.flv';
+
+# Open the file for reading
+    unless (sysopen DATA, $flv_filename, O_RDONLY) {
+        print header(),
+              "Can't read $flv_basename:  $!";
+        exit;
+    }
+
+# Binmode, in case someone is running this from Windows.
+    binmode DATA;
+
+    my $start      = 0;
+    my $end        = $size;
+    my $total_size = $size;
+    my $read_size  = 1024;
+    my $mtime      = (stat($flv_filename))[9];
+
+# Handle cache hits/misses
+    if ( $ENV{'HTTP_IF_MODIFIED_SINCE'}) {
+        my $check_time = str2time($ENV{'HTTP_IF_MODIFIED_SINCE'});
+        if ($mtime <= $check_time) {
+            print header(-Content_type           => $type,
+                         -status                 => "304 Not Modified"
+                        );
+            exit;
+        }
+    }
+
+# Requested a range?
+    if ($ENV{'HTTP_RANGE'}) {
+    # Figure out the size of the requested chunk
+        ($start, $end) = $ENV{'HTTP_RANGE'} =~ /bytes\W+(\d*)-(\d*)\W*$/;
+        if ($end < 1 || $end > $size) {
+            $end = $size;
+        }
+        $size = $end - $start+1;
+        if ($read_size > $size) {
+            $read_size = $size;
+        }
+        print header(-status                 => "206 Partial Content",
+                     -type                   => $type,
+                     -Content_length         => $size,
+                     -Accept_Ranges          => 'bytes',
+                     -Content_Range          => "bytes $start-$end/$total_size",
+                     -Last_Modified          => time2str($mtime)
+                 );
+    }
+    else {
+        print header(-type                  => $type,
+                    -Content_length         => $size,
+                    -Accept_Ranges          => 'bytes',
+                    -Last_Modified          => time2str($mtime)
+                 );
+    }
+
+# Seek to the requested position
+    sysseek DATA, $start, 0;
+
+# Print the content to the browser
+    my $buffer;
+    while (sysread DATA, $buffer, $read_size ) {
+        print $buffer;
+        $size -= $read_size;
+        if ($size == 0) {
+            last;
+        }
+        if ($size < $read_size) {
+            $read_size = $size;
+        }
+    }
+    close DATA;
+} else {
 # round to the nearest even integer
     sub round_even {
         my ($in) = @_;
@@ -51,23 +142,23 @@
 
 # Load some conversion settings from the database
     $sh = $dbh->prepare('SELECT data FROM settings WHERE value=? AND hostname IS NULL');
-    $sh->execute('WebFLV_w');
-    my ($width)    = $sh->fetchrow_array;
+    $sh->execute('WebFLV_h');
+    my ($height)    = $sh->fetchrow_array;
     $sh->execute('WebFLV_vb');
     my ($vbitrate) = $sh->fetchrow_array;
     $sh->execute('WebFLV_ab');
     my ($abitrate) = $sh->fetchrow_array;
     $sh->finish();
 # auto-detect height based on aspect ratio
-    $sh = $dbh->prepare('SELECT data FROM recordedmarkup WHERE chanid=? AND starttime=FROM_UNIXTIME(?) AND (type=30 OR type=31) AND mark=0 AND data IS NOT NULL ORDER BY type');
+    $sh = $dbh->prepare('SELECT data FROM recordedmarkup WHERE chanid=? AND starttime=FROM_UNIXTIME(?) AND (type=30 OR type=31) AND mark<10 AND data IS NOT NULL ORDER BY type');
     $sh->execute($chanid,$starttime);
     $x = $sh->fetchrow_array;           # type = 30
     $y = $sh->fetchrow_array if ($x);   # type = 31
-    $width = round_even($width);
+    $height = round_even($height);
     if ($x && $y) {
-        $height = round_even($width * ($y/$x));
+        $width = round_even($height * ($x/$y));
     } else {
-        $height = round_even($width * 3/4);
+        $width = round_even($height * 4/3);
     }
     $sh->finish();
 
@@ -80,15 +171,18 @@
                         .' -y'
                         .' -i '.shell_escape($filename)
                         .' -s '.shell_escape("${width}x${height}")
-                        .' -g 30'
-                        .' -r 24'
+                        .' -vcodec libx264'
+                        .' -b:v '.shell_escape("${vbitrate}k")
+                        .' -vpre mythweb'
                         .' -f flv'
+                        .' -vprofile baseline'
                         .' -deinterlace'
                         .' -async 2'
+                        .' -threads 0'
+                        .' -acodec libfaac'
                         .' -ac 2'
-                        .' -ar 11025'
-                        .' -ab '.shell_escape("${abitrate}k")
-                        .' -b '.shell_escape("${vbitrate}k")
+                        .' -ar 44100'
+                        .' -b:a '.shell_escape("${abitrate}k")
                         .' /dev/stdout 2>/dev/null |';
 
 # Print the movie
@@ -121,5 +215,5 @@
         }
     }
     close DATA;
-
-    1;
+}
+1;

@@ -164,7 +164,7 @@
     float:              left;
     padding:            0px;
     min-width:          350px;
-    max-width:          500px;
+    max-width:          1000px;
     margin:             10px 0px 10px 10px;
     background-color:   #101a29;
     color:              #E0E0FF;
@@ -187,7 +187,7 @@
     background-color:   black;
     text-align:         center;
 }
-#x-downloads div.x-pixmap a.x-pixmap {
+#x-downloads div.x-pixmap div.x-pixmap {
     margin:             .25em auto;
 }
 

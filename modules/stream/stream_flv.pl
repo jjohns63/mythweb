@@ -165,6 +165,7 @@ if ($size > 1) {
 
     my $ffmpeg_command = $ffmpeg
                         .' -y'
+                        .' -async 3'
                         .' -i '.shell_escape($filename)
                         .' -s '.shell_escape("${width}x${height}")
 			.' -vcodec libx264'

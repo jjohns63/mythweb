@@ -20,7 +20,7 @@
 // Custom headers
     $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_schedule.css">';
     $headers[] = '<link rel="stylesheet" type="text/css" href="'.skin_url.'/tv_detail.css">';
-    $headers[] = '<script type="text/javascript" src="'.root_url.'js/flowplayer-3.2.4.min.js"></script>';
+    $headers[] = '<script type="text/javascript" src="'.root_url.'js/flowplayer-3.2.6.js"></script>';
 
 // Print the page header
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
@@ -568,11 +568,11 @@
 
             <!-- this will install flowplayer inside previous A- tag. -->
             <script>
-                flowplayer("player", "http://releases.flowplayer.org/swf/flowplayer-3.2.5.swf", {
+                flowplayer("player", "http://releases.flowplayer.org/swf/flowplayer-3.2.7.swf", {
                     // change the default controlbar to transparent
                     plugins: {
                         controls: {
-                            url: 'flowplayer.controls-3.2.3.swf',
+                            url: 'flowplayer.controls-3.2.5.swf',
 
                             backgroundColor: "transparent",
                             backgroundGradient: "none",

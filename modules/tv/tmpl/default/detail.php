@@ -22,8 +22,8 @@
     require 'modules/_shared/tmpl/'.tmpl.'/header.php';
 
     if ($program && $program->filename) {
-        $flv_w = setting('WebFLV_w');
-        $flv_h = intVal($flv_w / $program->getAspect()) + 25;  // +25px for the playback controls
+        $flv_h = setting('WebFLV_h');
+        $flv_w = intVal($flv_h * $program->getAspect());
     }
 
 /*
@@ -652,35 +652,58 @@
 <?php       if (file_exists('js/libs/flowplayer/flowplayer.swf')) { ?>
 
 
-          <!-- this A tag is where your Flowplayer will be placed. it can be anywhere -->
-            <a href=""
-                style="display:block;width:<?php echo $flv_w ?>px;height:<?php echo $flv_h ?>px"
-                id="player">
-            </a>
+          <!-- this DIV tag is where your Flowplayer will be placed. it can be anywhere -->
+            <div id="player"
+                style="display:block;width:<?php echo $flv_w ?>px;height:<?php echo $flv_h ?>px">
+            </div>
 
             <!-- this will install flowplayer inside previous A- tag. -->
             <script>
-                flowplayer(
-                    "player",
-                    "<?php echo root_url ?>js/libs/flowplayer/flowplayer.swf", {
+                flowplayer("player", "<?php echo root_url ?>js/libs/flowplayer/flowplayer.swf", {
+                    // change the default controlbar to transparent
+                    plugins: {
+                        controls: {
+                            url: 'flowplayer.controls-3.2.5.swf',
+
+                            backgroundColor: "transparent",
+                            backgroundGradient: "none",
+                            sliderColor: '#000000',
+			    sliderBorder: '1.5px solid rgba(160,160,160,0.7)',
+			    volumeSliderColor: '#A3A3A3',
+			    volumeBorder: '1.5px solid rgba(160,160,160,0.7)',
+
+                            volumeColor: '#FFFFFF',
+                            progressColor: '#FFFFFF',
+                            bufferColor: '#A3A3A3',
+			    timeColor: '#FFFFFF',
+			    durationColor: '#A3A3A3',
+
+			    tooltipColor: 'rgba(255, 255, 255, 0.7)',
+			    tooltipTextColor: '#000000'
+		        }
+	            },
                     playlist: [
                         // this first PNG clip works as a splash image
                         {
                             url: '<?php echo $program->thumb_url($flv_w,0) ?>',
-                            scaling: 'orig'
+                            scaling: 'fit'
                             },
                         // Then we have the video
                         {
                             url: "<?php echo video_url($program, 'flv'); ?>",
-                            duration: <?php echo $program->length ?>,
+                            // duration: <?php echo $program->length ?>,
                             autoPlay: false,
                             scaling: 'fit',
                             // Would be nice to auto-buffer, but we don't want to
                             // waste bandwidth and CPU on the remote machine.
                             autoBuffering: false
-                            }
-                        ]}
-                    );
+                        }
+                    ],
+                    canvas: {
+                       backgroundColor: '#000000',
+                       backgroundGradient: 'none'
+                    }
+                });
             </script>
 <?php       } elseif (file_exists('modules/tv/MFPlayer.swf')) { ?>
                     <script langfuage="JavaScript" type="text/javascript">

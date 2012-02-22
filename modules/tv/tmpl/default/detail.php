@@ -663,7 +663,7 @@
                     // change the default controlbar to transparent
                     plugins: {
                         controls: {
-                            url: 'flowplayer.controls-3.2.5.swf',
+                            url: 'flowplayer.controls.swf',
 
                             backgroundColor: "transparent",
                             backgroundGradient: "none",
